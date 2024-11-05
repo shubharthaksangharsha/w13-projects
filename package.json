@@ -2,6 +2,7 @@
   "name": "w13-projects",
   "version": "1.0.0",
   "description": "W13 Projects Website",
+  "license": "MIT",
   "scripts": {
     "build": "tailwindcss -i ./css/input.css -o ./css/style.css --watch"
   },
