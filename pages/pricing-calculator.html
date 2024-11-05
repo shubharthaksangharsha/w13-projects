@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Calculator - W13 Projects</title>
+    <link href="../css/tailwind.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+</head>
+<body class="font-poppins">
+    <main class="pt-20">
+        <section class="bg-gray-50 py-20">
+            <div class="container mx-auto px-4">
+                <h1 class="font-playfair text-5xl font-bold text-center mb-12" data-aos="fade-up">
+                    Project Cost Calculator
+                </h1>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Calculator Form -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-right">
+                        <form id="calculator-form" class="space-y-6">
+                            <div>
+                                <label class="block text-gray-700 mb-2">Project Type</label>
+                                <select id="project-type" class="w-full p-3 border rounded-lg">
+                                    <option value="new-home">New Home Construction</option>
+                                    <option value="renovation">Renovation</option>
+                                    <option value="extension">Home Extension</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 mb-2">Square Meters</label>
+                                <input type="number" id="square-meters" 
+                                       class="w-full p-3 border rounded-lg">
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 mb-2">Quality Level</label>
+                                <div class="flex gap-4">
+                                    <button type="button" class="quality-btn flex-1 p-3 border rounded-lg">
+                                        Standard
+                                    </button>
+                                    <button type="button" class="quality-btn flex-1 p-3 border rounded-lg">
+                                        Premium
+                                    </button>
+                                    <button type="button" class="quality-btn flex-1 p-3 border rounded-lg">
+                                        Luxury
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <label class="block text-gray-700">Additional Features</label>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="form-checkbox text-secondary">
+                                        <span class="ml-2">Solar Panels</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="form-checkbox text-secondary">
+                                        <span class="ml-2">Smart Home</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="form-checkbox text-secondary">
+                                        <span class="ml-2">Pool</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="form-checkbox text-secondary">
+                                        <span class="ml-2">Landscaping</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="submit" 
+                                    class="w-full bg-secondary text-white py-3 rounded-lg hover:bg-opacity-90 
+                                           transition-colors transform hover:scale-105">
+                                Calculate Estimate
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Result Display -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-left">
+                        <div id="calculation-result" class="space-y-6">
+                            <h3 class="text-2xl font-bold text-center">Estimated Project Cost</h3>
+                            <div class="text-center">
+                                <span class="text-5xl font-bold text-secondary" id="total-cost">$0</span>
+                            </div>
+                            <div class="space-y-4 mt-8">
+                                <div class="flex justify-between">
+                                    <span>Base Cost:</span>
+                                    <span id="base-cost">$0</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Features:</span>
+                                    <span id="features-cost">$0</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Quality Premium:</span>
+                                    <span id="quality-cost">$0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="../js/calculator.js"></script>
+</body>
+</html> 

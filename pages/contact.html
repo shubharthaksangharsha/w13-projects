@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - W13 Projects</title>
+    <link href="../css/tailwind.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSAQQIs5zQZ-aeIZuT17RKKpcj5rIuS4Y&callback=console.debug&libraries=maps,marker&v=beta">
+    </script>
+    <style>
+        gmp-map {
+            height: 400px;
+            width: 100%;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="font-poppins">
+    <main class="pt-20">
+        <section class="bg-gray-50 py-20">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+                        <form id="contact-form" class="space-y-6">
+                            <div>
+                                <label class="block text-gray-700" for="name">Name</label>
+                                <input class="mt-1 block w-full" id="name" name="name" type="text" placeholder="Your Name">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700" for="email">Email</label>
+                                <input class="mt-1 block w-full" id="email" name="email" type="email" placeholder="Your Email">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700" for="message">Message</label>
+                                <textarea class="mt-1 block w-full" id="message" name="message" rows="3" placeholder="Your Message"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full bg-secondary text-white py-3 px-4 rounded-md hover:bg-secondary-focus">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Map and Contact Info -->
+                    <div class="space-y-8">
+                        <div class="bg-white p-8 rounded-xl shadow-lg">
+                            <h2 class="text-3xl font-bold mb-6">Find Us</h2>
+                            <gmp-map center="-34.8367,138.6933" zoom="15" map-id="DEMO_MAP_ID">
+                                <gmp-advanced-marker position="-34.8367,138.6933" title="W13 Projects"></gmp-advanced-marker>
+                            </gmp-map>
+                        </div>
+
+                        <div class="bg-white p-8 rounded-xl shadow-lg">
+                            <h3 class="text-xl font-bold mb-4">Contact Information</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center space-x-4">
+                                    <i class="fas fa-map-marker-alt text-secondary text-xl"></i>
+                                    <p>419 Nelson Road, Para Hills, SA</p>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <i class="fas fa-phone text-secondary text-xl"></i>
+                                    <p>[Your Phone Number]</p>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <i class="fas fa-envelope text-secondary text-xl"></i>
+                                    <p>[Your Email]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    
+    <script src="../js/contact.js"></script>
+</body>
+</html> 

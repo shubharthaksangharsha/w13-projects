@@ -1,0 +1,27 @@
+@layer components {
+    .footer-social-link {
+        @apply w-10 h-10 bg-secondary rounded-full flex items-center justify-center 
+               hover:bg-opacity-80 transition-all transform hover:scale-110;
+    }
+
+    .calculator-input {
+        @apply w-full p-3 border rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent;
+    }
+
+    .quality-btn {
+        @apply flex-1 p-3 border rounded-lg hover:bg-secondary hover:text-white 
+               transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-secondary;
+    }
+
+    .quality-btn.active {
+        @apply bg-secondary text-white;
+    }
+
+    .nav-link {
+        @apply text-gray-700 hover:text-secondary transition-colors;
+    }
+
+    .nav-link.active {
+        @apply text-secondary;
+    }
+} 

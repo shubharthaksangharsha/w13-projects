@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get in Touch - W13 Projects</title>
+    <link href="../css/tailwind.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body class="font-poppins">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <!-- Your existing navigation -->
+    </nav>
+
+    <main class="pt-20">
+        <section class="bg-gradient-to-b from-gray-50 to-white py-20">
+            <div class="container mx-auto px-4">
+                <div class="max-w-5xl mx-auto">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <!-- Contact Information -->
+                        <div class="space-y-8" data-aos="fade-right">
+                            <h1 class="font-playfair text-4xl lg:text-5xl font-bold text-primary">
+                                Let's Build Your Dream Home Together
+                            </h1>
+                            <p class="text-gray-600 text-lg">
+                                Ready to start your journey with W13 Projects? We're here to help turn your vision into reality.
+                            </p>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                                    <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-phone text-secondary"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold">Call Us</h3>
+                                        <p class="text-gray-600">[Your Phone Number]</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                                    <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-envelope text-secondary"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold">Email Us</h3>
+                                        <p class="text-gray-600">[Your Email]</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                                    <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-map-marker-alt text-secondary"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold">Visit Us</h3>
+                                        <p class="text-gray-600">419 Nelson Road, Para Hills, SA</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-left">
+                            <form id="get-in-touch-form" class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">First Name</label>
+                                        <input type="text" required
+                                               class="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-secondary focus:border-transparent">
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">Last Name</label>
+                                        <input type="text" required
+                                               class="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-secondary focus:border-transparent">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-gray-700 mb-2">Email</label>
+                                    <input type="email" required
+                                           class="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-secondary focus:border-transparent">
+                                </div>
+
+                                <div>
+                                    <label class="block text-gray-700 mb-2">Phone</label>
+                                    <input type="tel" required
+                                           class="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-secondary focus:border-transparent">
+                                </div>
+
+                                <div>
+                                    <label class="block text-gray-700 mb-2">Project Type</label>
+                                    <select class="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-secondary focus:border-transparent">
+                                        <option value="">Select Project Type</option>
+                                        <option value="new-home">New Home Construction</option>
+                                        <option value="renovation">Renovation</option>
+                                        <option value="extension">Extension</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-gray-700 mb-2">Message</label>
+                                    <textarea rows="4" required
+                                              class="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-secondary focus:border-transparent"></textarea>
+                                </div>
+
+                                <button type="submit" 
+                                        class="w-full bg-secondary text-white py-4 rounded-lg hover:bg-opacity-90 
+                                               transition-all transform hover:scale-105">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+    <script src="../js/get-in-touch.js"></script>
+</body>
+</html> 

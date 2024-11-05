@@ -1,0 +1,12 @@
+{
+  "name": "w13-projects",
+  "version": "1.0.0",
+  "description": "W13 Projects Website",
+  "scripts": {
+    "build": "tailwindcss -i ./css/input.css -o ./css/style.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1",
+    "@tailwindcss/forms": "^0.5.7"
+  }
+}

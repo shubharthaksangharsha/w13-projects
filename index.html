@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W13 Projects - Your Dream Home Builder</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body class="font-poppins">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <a href="#home" class="text-2xl font-bold text-primary">W13 Projects</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-secondary transition-colors">Home</a>
+                    <a href="pages/about.html" class="text-gray-700 hover:text-secondary transition-colors">About</a>
+                    <a href="pages/portfolio.html" class="text-gray-700 hover:text-secondary transition-colors">Portfolio</a>
+                    <a href="pages/services.html" class="text-gray-700 hover:text-secondary transition-colors">Services</a>
+                    <a href="pages/contact.html" class="text-gray-700 hover:text-secondary transition-colors">Contact</a>
+                    <a href="pages/get-in-touch.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all">Get in Touch</a>
+                </div>
+                <button class="md:hidden" id="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="fixed top-20 left-0 w-full bg-white shadow-md z-40 hidden" id="mobile-menu">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="text-gray-700 hover:text-secondary transition-colors">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-secondary transition-colors">About</a>
+                <a href="#portfolio" class="text-gray-700 hover:text-secondary transition-colors">Portfolio</a>
+                <a href="#services" class="text-gray-700 hover:text-secondary transition-colors">Services</a>
+                <a href="#contact" class="text-gray-700 hover:text-secondary transition-colors">Contact</a>
+                <a href="#get-in-touch" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all text-center">Get in Touch</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen relative">
+        <div class="relative h-screen">
+            <div class="absolute inset-0">
+                <img src="images/front.jpg" alt="Hero Image" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+            </div>
+            <div class="relative container mx-auto px-4 h-full flex items-center">
+                <div class="text-white max-w-2xl mt-20" data-aos="fade-up">
+                    <h1 class="font-playfair text-5xl md:text-6xl font-bold mb-6">
+                        Perfect House of Your Dream
+                    </h1>
+                    <p class="text-xl mb-8">
+                        Transform your vision into reality with W13 Projects
+                    </p>
+                    <a href="#get-in-touch" 
+                       class="inline-block px-8 py-4 bg-secondary text-white rounded-lg 
+                              hover:bg-opacity-90 transition-all transform hover:scale-105">
+                        Start Your Journey
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6" data-aos="fade-right">
+                    <h2 class="font-playfair text-4xl font-bold text-primary">
+                        Building Dreams Since 2010
+                    </h2>
+                    <p class="text-gray-600">
+                        W13 Projects is your trusted partner in creating exceptional living spaces. 
+                        With over a decade of experience, we've helped countless families turn their 
+                        dream homes into reality.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center p-6 bg-white rounded-lg shadow-lg">
+                            <h3 class="text-3xl font-bold text-secondary mb-2">200+</h3>
+                            <p class="text-gray-600">Projects Completed</p>
+                        </div>
+                        <div class="text-center p-6 bg-white rounded-lg shadow-lg">
+                            <h3 class="text-3xl font-bold text-secondary mb-2">15+</h3>
+                            <p class="text-gray-600">Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+                    <img src="images/Living.jpg" alt="Interior" class="rounded-lg shadow-lg">
+                    <img src="images/Kitchen1.jpg" alt="Kitchen" class="rounded-lg shadow-lg mt-8">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="font-playfair text-4xl font-bold text-center mb-12" data-aos="fade-up">
+                Our Services
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-home text-4xl text-secondary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Custom Home Building</h3>
+                    <p class="text-gray-600">Create your dream home from the ground up with our expert builders.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-tools text-4xl text-secondary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Renovations</h3>
+                    <p class="text-gray-600">Transform your existing space into something extraordinary.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-pencil-ruler text-4xl text-secondary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Design Services</h3>
+                    <p class="text-gray-600">Professional design services to bring your vision to life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="space-y-6" data-aos="fade-right">
+                    <h2 class="font-playfair text-4xl font-bold text-primary">Get in Touch</h2>
+                    <p class="text-gray-600">Ready to start your project? Contact us today for a consultation.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-map-marker-alt text-secondary text-xl"></i>
+                            <p>419 Nelson Road, Para Hills, SA</p>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-phone text-secondary text-xl"></i>
+                            <p>[Your Phone Number]</p>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-envelope text-secondary text-xl"></i>
+                            <p>[Your Email]</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="space-y-6" data-aos="fade-left">
+                    <div>
+                        <input type="text" placeholder="Your Name" 
+                               class="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-secondary focus:border-transparent">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Your Email" 
+                               class="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-secondary focus:border-transparent">
+                    </div>
+                    <div>
+                        <textarea rows="4" placeholder="Your Message" 
+                                  class="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-secondary focus:border-transparent"></textarea>
+                    </div>
+                    <button type="submit" 
+                            class="w-full bg-secondary text-white py-3 rounded-lg hover:bg-opacity-90 transition-all">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-bold">W13 Projects</h3>
+                    <p class="text-gray-400">Building dreams into reality.</p>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-xl font-bold">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-xl font-bold">Contact</h4>
+                    <p class="text-gray-400">419 Nelson Road</p>
+                    <p class="text-gray-400">Para Hills, SA</p>
+                    <p class="text-gray-400">[Your Phone]</p>
+                    <p class="text-gray-400">[Your Email]</p>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-xl font-bold">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center hover:bg-opacity-80 transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center hover:bg-opacity-80 transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center hover:bg-opacity-80 transition-all">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 W13 Projects. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

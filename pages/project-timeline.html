@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Timeline - W13 Projects</title>
+    <link href="../css/tailwind.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vis-timeline@7.7.0/dist/vis-timeline-graph2d.min.css">
+</head>
+<body class="font-poppins">
+    <main class="pt-20">
+        <section class="bg-gray-50 py-20">
+            <div class="container mx-auto px-4">
+                <h1 class="font-playfair text-5xl font-bold text-center mb-12" data-aos="fade-up">
+                    Project Timeline Visualizer
+                </h1>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <!-- Timeline Controls -->
+                    <div class="flex gap-4 mb-8">
+                        <select id="project-type" class="form-select rounded-lg">
+                            <option value="new-home">New Home Construction</option>
+                            <option value="renovation">Renovation</option>
+                            <option value="extension">Extension</option>
+                        </select>
+                        <button id="generate-timeline" class="bg-secondary text-white px-6 py-2 rounded-lg">
+                            Generate Timeline
+                        </button>
+                    </div>
+
+                    <!-- Timeline Visualization -->
+                    <div id="timeline" class="h-[600px]"></div>
+
+                    <!-- Project Milestones -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                        <div class="milestone-card p-6 bg-gray-50 rounded-lg">
+                            <h3 class="font-bold text-lg mb-2">Planning Phase</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <!-- Milestones will be added dynamically -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/vis-timeline@7.7.0/dist/vis-timeline-graph2d.min.js"></script>
+    <script src="../js/timeline.js"></script>
+</body>
+</html> 
