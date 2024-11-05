@@ -6,13 +6,31 @@
     <title>Services - W13 Projects</title>
     <link href="../css/tailwind.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body class="font-poppins">
-    <!-- Navigation -->
-    
-    
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all duration-300">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-20">
+            <a href="../index.html" class="text-2xl font-bold text-primary">W13 Projects</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="../index.html" class="text-gray-700 hover:text-secondary transition-colors">Home</a>
+                <a href="about.html" class="text-gray-700 hover:text-secondary transition-colors">About</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-secondary transition-colors">Portfolio</a>
+                <a href="services.html" class="text-gray-700 hover:text-secondary transition-colors">Services</a>
+                <a href="contact.html" class="text-gray-700 hover:text-secondary transition-colors">Contact</a>
+                <a href="get-in-touch.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all">Get in Touch</a>
+            </div>
+            <button class="md:hidden" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+    </nav>
+
     <main class="pt-20">
         <!-- Hero Section -->
         <section class="relative h-[60vh] bg-cover bg-center" 
@@ -105,18 +123,126 @@
                 <h2 class="font-playfair text-4xl font-bold text-center mb-16" data-aos="fade-up">
                     Our Process
                 </h2>
-                <div class="relative">
-                    <div class="absolute top-1/2 left-0 right-0 h-1 bg-secondary transform -translate-y-1/2 hidden md:block"></div>
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                        <!-- Process steps will be added here -->
+                <div class="max-w-6xl mx-auto relative">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <!-- Left Side: Steps -->
+                        <div class="relative">
+                            <!-- Step 1 -->
+                            <div class="flex items-start mb-8" data-aos="fade-right">
+                                <div class="flex-shrink-0 w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-2xl font-bold text-white">1</div>
+                                <div class="ml-8 pt-3">
+                                    <h3 class="text-2xl font-bold mb-2">Consultation</h3>
+                                    <p class="text-gray-600">Initial meeting to discuss your vision and requirements</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Footsteps -->
+                            <div class="ml-8 my-4 space-y-2">
+                                <div class="w-8 h-8 bg-[#F5E6D3] rounded-full transform rotate-45"></div>
+                                <div class="w-8 h-8 bg-[#F5E6D3] rounded-full transform rotate-45 ml-4"></div>
+                                <div class="w-8 h-8 bg-[#F5E6D3] rounded-full transform rotate-45 ml-8"></div>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div class="flex items-start mb-8" data-aos="fade-up" data-aos-delay="100">
+                                <div class="flex-shrink-0 w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-2xl font-bold text-white">2</div>
+                                <div class="ml-8 pt-3">
+                                    <h3 class="text-2xl font-bold mb-2">Planning</h3>
+                                    <p class="text-gray-600">Detailed project planning and design development</p>
+                                </div>
+                            </div>
+
+                            <!-- Footsteps -->
+                            <div class="ml-8 my-4 space-y-2">
+                                <div class="w-8 h-8 bg-[#F5E6D3] rounded-full transform rotate-45"></div>
+                                <div class="w-8 h-8 bg-[#F5E6D3] rounded-full transform rotate-45 ml-4"></div>
+                                <div class="w-8 h-8 bg-[#F5E6D3] rounded-full transform rotate-45 ml-8"></div>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="flex items-start mb-8" data-aos="fade-up" data-aos-delay="200">
+                                <div class="flex-shrink-0 w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-2xl font-bold text-white">3</div>
+                                <div class="ml-8 pt-3">
+                                    <h3 class="text-2xl font-bold mb-2">Execution</h3>
+                                    <p class="text-gray-600">Professional construction and project management</p>
+                                </div>
+                            </div>
+
+                            <!-- Footsteps -->
+                            <div class="ml-8 my-4 space-y-2">
+                                <div class="w-8 h-8 bg-[#F5E6D3] rounded-full transform rotate-45"></div>
+                                <div class="w-8 h-8 bg-[#F5E6D3] rounded-full transform rotate-45 ml-4"></div>
+                                <div class="w-8 h-8 bg-[#F5E6D3] rounded-full transform rotate-45 ml-8"></div>
+                            </div>
+
+                            <!-- Step 4 -->
+                            <div class="flex items-start" data-aos="fade-up" data-aos-delay="300">
+                                <div class="flex-shrink-0 w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-2xl font-bold text-white">4</div>
+                                <div class="ml-8 pt-3">
+                                    <h3 class="text-2xl font-bold mb-2">Delivery</h3>
+                                    <p class="text-gray-600">Final inspection and project handover</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Side: Additional Info -->
+                        <div class="space-y-8 lg:mt-12" data-aos="fade-left">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <div class="flex items-center mb-4">
+                                    <i class="fas fa-clock text-3xl text-secondary mr-4"></i>
+                                    <h3 class="text-xl font-bold">Average Timeline</h3>
+                                </div>
+                                <p class="text-gray-600">Most projects are completed within 6-8 months from initial consultation to final handover.</p>
+                            </div>
+
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <div class="flex items-center mb-4">
+                                    <i class="fas fa-chart-line text-3xl text-secondary mr-4"></i>
+                                    <h3 class="text-xl font-bold">Success Rate</h3>
+                                </div>
+                                <p class="text-gray-600">98% of our projects are completed on time and within budget.</p>
+                            </div>
+
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <div class="flex items-center mb-4">
+                                    <i class="fas fa-users text-3xl text-secondary mr-4"></i>
+                                    <h3 class="text-xl font-bold">Client Satisfaction</h3>
+                                </div>
+                                <p class="text-gray-600">Our dedicated team ensures complete satisfaction throughout the entire process.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script> 
-</body>
 
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden fixed inset-0 bg-black bg-opacity-50 z-40 hidden">
+        <div class="bg-white w-64 h-full absolute right-0 py-4 px-6">
+            <div class="flex justify-end mb-8">
+                <button id="close-menu-button">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="flex flex-col space-y-4">
+                <a href="../index.html" class="text-gray-700 hover:text-secondary transition-colors">Home</a>
+                <a href="about.html" class="text-gray-700 hover:text-secondary transition-colors">About</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-secondary transition-colors">Portfolio</a>
+                <a href="services.html" class="text-gray-700 hover:text-secondary transition-colors">Services</a>
+                <a href="contact.html" class="text-gray-700 hover:text-secondary transition-colors">Contact</a>
+                <a href="get-in-touch.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all text-center">Get in Touch</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
 </html> 

@@ -6,11 +6,29 @@
     <title>About - W13 Projects</title>
     <link href="../css/tailwind.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body class="font-poppins">
-    <!-- Navigation (same as index.html) -->
+        <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <a href="../index.html" class="text-2xl font-bold text-primary">W13 Projects</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html" class="text-gray-700 hover:text-secondary transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-secondary transition-colors">About</a>
+                    <a href="portfolio.html" class="text-gray-700 hover:text-secondary transition-colors">Portfolio</a>
+                    <a href="services.html" class="text-gray-700 hover:text-secondary transition-colors">Services</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-secondary transition-colors">Contact</a>
+                    <a href="get-in-touch.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all">Get in Touch</a>
+                </div>
+                <button class="md:hidden" id="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
 
     <main class="pt-20">
         <section class="bg-gray-50 py-20">
@@ -73,10 +91,59 @@
                 </div>
             </div>
         </section>
+
+        <section class="bg-gray-50 py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="font-playfair text-3xl md:text-4xl font-bold text-center mb-4">Our Achievements</h2>
+                <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+                    Our dedication to excellence has earned us recognition across the industry. Here are some of our key achievements.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <i class="fas fa-award text-4xl text-secondary mb-4"></i>
+                        <h3 class="font-bold text-xl mb-2">Best Builder</h3>
+                        <p class="text-gray-600">2023 Construction Excellence Award</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <i class="fas fa-leaf text-4xl text-secondary mb-4"></i>
+                        <h3 class="font-bold text-xl mb-2">Eco-Friendly</h3>
+                        <p class="text-gray-600">Green Building Certification</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <i class="fas fa-shield-alt text-4xl text-secondary mb-4"></i>
+                        <h3 class="font-bold text-xl mb-2">Safety First</h3>
+                        <p class="text-gray-600">Zero Incident Record 2023</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <i class="fas fa-users text-4xl text-secondary mb-4"></i>
+                        <h3 class="font-bold text-xl mb-2">Client Trust</h3>
+                        <p class="text-gray-600">98% Client Satisfaction Rate</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer (same as index.html) -->
     
     <script src="../js/main.js"></script>
+    <div id="mobile-menu" class="md:hidden fixed inset-0 bg-black bg-opacity-50 z-40 hidden">
+        <div class="bg-white w-64 h-full absolute right-0 py-4 px-6">
+            <div class="flex justify-end mb-8">
+                <button id="close-menu-button">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="flex flex-col space-y-4">
+                <a href="../index.html" class="text-gray-700 hover:text-secondary transition-colors">Home</a>
+                <a href="about.html" class="text-gray-700 hover:text-secondary transition-colors">About</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-secondary transition-colors">Portfolio</a>
+                <a href="services.html" class="text-gray-700 hover:text-secondary transition-colors">Services</a>
+                <a href="contact.html" class="text-gray-700 hover:text-secondary transition-colors">Contact</a>
+                <a href="get-in-touch.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all text-center">Get in Touch</a>
+            </div>
+        </div>
+    </div>
+    <script src="../js/navigation.js"></script>
 </body>
 </html> 

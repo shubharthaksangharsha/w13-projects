@@ -6,71 +6,137 @@
     <title>Contact - W13 Projects</title>
     <link href="../css/tailwind.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSAQQIs5zQZ-aeIZuT17RKKpcj5rIuS4Y&callback=console.debug&libraries=maps,marker&v=beta">
-    </script>
-    <style>
-        gmp-map {
-            height: 400px;
-            width: 100%;
-            border-radius: 0.5rem;
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="../css/contact.css" rel="stylesheet">
+    <script>
+        async function initMap() {
+            const { Map } = await google.maps.importLibrary("maps");
+            const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+            
+            const map = new Map(document.getElementById('map'), {
+                center: { lat: -34.8367, lng: 138.6933 },
+                zoom: 15,
+                mapId: 'YOUR_MAP_ID'
+            });
+            
+            const marker = new AdvancedMarkerElement({
+                map: map,
+                position: { lat: -34.8367, lng: 138.6933 },
+                title: "W13 Projects"
+            });
         }
-    </style>
+    </script>
+    <script>
+        (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.googleapis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+            key: "AIzaSyBSAQQIs5zQZ-aeIZuT17RKKpcj5rIuS4Y",
+            v: "weekly"
+        });
+        initMap();
+    </script>
 </head>
 <body class="font-poppins">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <a href="../index.html" class="text-2xl font-bold text-primary">W13 Projects</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html" class="text-gray-700 hover:text-secondary transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-secondary transition-colors">About</a>
+                    <a href="portfolio.html" class="text-gray-700 hover:text-secondary transition-colors">Portfolio</a>
+                    <a href="services.html" class="text-gray-700 hover:text-secondary transition-colors">Services</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-secondary transition-colors">Contact</a>
+                    <a href="get-in-touch.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all">Get in Touch</a>
+                </div>
+                <button class="md:hidden" id="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
     <main class="pt-20">
-        <section class="bg-gray-50 py-20">
+        <!-- Hero Section -->
+        <section class="bg-gray-50 py-16">
             <div class="container mx-auto px-4">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <!-- Contact Form -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg">
-                        <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
-                        <form id="contact-form" class="space-y-6">
-                            <div>
-                                <label class="block text-gray-700" for="name">Name</label>
-                                <input class="mt-1 block w-full" id="name" name="name" type="text" placeholder="Your Name">
-                            </div>
-                            <div>
-                                <label class="block text-gray-700" for="email">Email</label>
-                                <input class="mt-1 block w-full" id="email" name="email" type="email" placeholder="Your Email">
-                            </div>
-                            <div>
-                                <label class="block text-gray-700" for="message">Message</label>
-                                <textarea class="mt-1 block w-full" id="message" name="message" rows="3" placeholder="Your Message"></textarea>
-                            </div>
-                            <div>
-                                <button type="submit" class="w-full bg-secondary text-white py-3 px-4 rounded-md hover:bg-secondary-focus">
-                                    Send Message
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                    <h1 class="font-playfair text-5xl font-bold text-primary mb-4">Get in Touch</h1>
+                    <p class="text-gray-600 text-lg">We're here to help bring your dream project to life. Reach out to us today.</p>
+                </div>
 
-                    <!-- Map and Contact Info -->
-                    <div class="space-y-8">
-                        <div class="bg-white p-8 rounded-xl shadow-lg">
-                            <h2 class="text-3xl font-bold mb-6">Find Us</h2>
-                            <gmp-map center="-34.8367,138.6933" zoom="15" map-id="DEMO_MAP_ID">
-                                <gmp-advanced-marker position="-34.8367,138.6933" title="W13 Projects"></gmp-advanced-marker>
-                            </gmp-map>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Contact Info Cards -->
+                    <div class="lg:col-span-1 space-y-6">
+                        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-aos="fade-right">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-secondary/10 p-3 rounded-lg">
+                                    <i class="fas fa-map-marker-alt text-secondary text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg mb-2">Visit Us</h3>
+                                    <p class="text-gray-600">419 Nelson Road,<br>Para Hills, SA 5096</p>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="bg-white p-8 rounded-xl shadow-lg">
-                            <h3 class="text-xl font-bold mb-4">Contact Information</h3>
-                            <div class="space-y-4">
-                                <div class="flex items-center space-x-4">
-                                    <i class="fas fa-map-marker-alt text-secondary text-xl"></i>
-                                    <p>419 Nelson Road, Para Hills, SA</p>
+                        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-aos="fade-right" data-aos-delay="100">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-secondary/10 p-3 rounded-lg">
+                                    <i class="fas fa-phone text-secondary text-2xl"></i>
                                 </div>
-                                <div class="flex items-center space-x-4">
-                                    <i class="fas fa-phone text-secondary text-xl"></i>
-                                    <p>[Your Phone Number]</p>
-                                </div>
-                                <div class="flex items-center space-x-4">
-                                    <i class="fas fa-envelope text-secondary text-xl"></i>
-                                    <p>[Your Email]</p>
+                                <div>
+                                    <h3 class="font-bold text-lg mb-2">Call Us</h3>
+                                    <p class="text-gray-600">+61 123 456 789</p>
+                                    <p class="text-gray-600">Mon-Fri: 9:00 AM - 5:00 PM</p>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-aos="fade-right" data-aos-delay="200">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-secondary/10 p-3 rounded-lg">
+                                    <i class="fas fa-envelope text-secondary text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg mb-2">Email Us</h3>
+                                    <p class="text-gray-600">info@w13projects.com</p>
+                                    <p class="text-gray-600">support@w13projects.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form and Map -->
+                    <div class="lg:col-span-2 space-y-8">
+                        <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-left">
+                            <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="md:col-span-1">
+                                    <label class="block text-gray-700 font-medium mb-2" for="name">Full Name</label>
+                                    <input type="text" id="name" name="name" class="form-input" placeholder="John Doe">
+                                </div>
+                                <div class="md:col-span-1">
+                                    <label class="block text-gray-700 font-medium mb-2" for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com">
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label class="block text-gray-700 font-medium mb-2" for="subject">Subject</label>
+                                    <input type="text" id="subject" name="subject" class="form-input" placeholder="How can we help?">
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label class="block text-gray-700 font-medium mb-2" for="message">Message</label>
+                                    <textarea id="message" name="message" rows="4" class="form-input" placeholder="Your message here..."></textarea>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <button type="submit" class="w-full bg-secondary text-white py-3 px-6 rounded-lg hover:bg-opacity-90 transition-all duration-200 flex items-center justify-center space-x-2">
+                                        <span>Send Message</span>
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-left" data-aos-delay="100">
+                            <div id="map" class="w-full h-[500px] rounded-xl shadow-lg"></div>
                         </div>
                     </div>
                 </div>
@@ -78,8 +144,33 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    
+    <!-- Mobile Menu (keeping existing menu) -->
+    <div id="mobile-menu" class="md:hidden fixed inset-0 bg-black bg-opacity-50 z-40 hidden">
+        <div class="bg-white w-64 h-full absolute right-0 py-4 px-6">
+            <div class="flex justify-end mb-8">
+                <button id="close-menu-button">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="flex flex-col space-y-4">
+                <a href="../index.html" class="text-gray-700 hover:text-secondary transition-colors">Home</a>
+                <a href="about.html" class="text-gray-700 hover:text-secondary transition-colors">About</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-secondary transition-colors">Portfolio</a>
+                <a href="services.html" class="text-gray-700 hover:text-secondary transition-colors">Services</a>
+                <a href="contact.html" class="text-gray-700 hover:text-secondary transition-colors">Contact</a>
+                <a href="get-in-touch.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all text-center">Get in Touch</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
     <script src="../js/contact.js"></script>
 </body>
 </html> 
