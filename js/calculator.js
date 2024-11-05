@@ -30,6 +30,31 @@ class ProjectCalculator {
 
         // Real-time calculation
         form.addEventListener('change', () => this.calculateCost());
+
+        // Add contact form handling
+        const contactBtn = document.getElementById('contact-btn');
+        const modal = document.getElementById('contact-modal');
+        const closeModal = document.getElementById('close-modal');
+        const contactForm = document.getElementById('contact-form');
+
+        contactBtn.addEventListener('click', () => {
+            this.openContactModal();
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        contactForm.addEventListener('submit', (e) => {
+            this.handleContactSubmit(e);
+        });
+
+        // Close modal on outside click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
     }
 
     handleQualitySelection(selectedBtn) {
@@ -102,6 +127,74 @@ class ProjectCalculator {
             position: { x: 'right', y: 'top' },
         });
         notyf.success('Calculation completed successfully!');
+    }
+
+    openContactModal() {
+        const modal = document.getElementById('contact-modal');
+        const projectDetails = document.getElementById('project-details');
+        
+        // Prepare project details
+        const details = {
+            projectType: document.getElementById('project-type').value,
+            squareMeters: document.getElementById('square-meters').value,
+            quality: document.querySelector('.quality-btn.bg-secondary')?.textContent.trim(),
+            features: Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+                .map(cb => cb.nextElementSibling.textContent.trim()),
+            estimatedCost: document.getElementById('total-cost').textContent
+        };
+
+        projectDetails.value = JSON.stringify(details);
+        modal.classList.add('active');
+    }
+
+    async handleContactSubmit(e) {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+        
+        try {
+            // Show loading state
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            // Send to your backend API
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                body: JSON.stringify(Object.fromEntries(formData)),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (!response.ok) throw new Error('Failed to send message');
+
+            // Show success message
+            const notyf = new Notyf({
+                duration: 3000,
+                position: { x: 'right', y: 'top' },
+            });
+            notyf.success('Message sent successfully! We\'ll contact you soon.');
+
+            // Close modal and reset form
+            document.getElementById('contact-modal').classList.remove('active');
+            form.reset();
+
+        } catch (error) {
+            // Show error message
+            const notyf = new Notyf({
+                duration: 3000,
+                position: { x: 'right', y: 'top' },
+                type: 'error'
+            });
+            notyf.error('Failed to send message. Please try again.');
+
+        } finally {
+            // Reset button state
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }
     }
 }
 

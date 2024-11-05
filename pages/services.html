@@ -8,20 +8,27 @@
     <link href="../css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
 </head>
 <body class="font-poppins">
+
+
 <!-- Navigation -->
 <nav class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all duration-300">
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center h-20">
-            <a href="../index.html" class="text-2xl font-bold text-primary">W13 Projects</a>
+            <a href="#home" class="text-2xl font-bold text-primary">W13 Projects</a>
             <div class="hidden md:flex space-x-8">
-                <a href="../index.html" class="text-gray-700 hover:text-secondary transition-colors">Home</a>
-                <a href="about.html" class="text-gray-700 hover:text-secondary transition-colors">About</a>
-                <a href="portfolio.html" class="text-gray-700 hover:text-secondary transition-colors">Portfolio</a>
-                <a href="services.html" class="text-gray-700 hover:text-secondary transition-colors">Services</a>
-                <a href="contact.html" class="text-gray-700 hover:text-secondary transition-colors">Contact</a>
-                <a href="get-in-touch.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all">Get in Touch</a>
+                <a href="../index.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Home</a>
+                <a href="../pages/services.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Services</a>
+                <a href="../pages/portfolio.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Portfolio</a>
+                <a href="../pages/pricing-calculator.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Cost Calculator</a>
+                <a href="../pages/contact.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Contact</a>
+                <a href="../pages/get-in-touch.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all">Get in Touch</a>
             </div>
             <button class="md:hidden" id="mobile-menu-button">
                 <i class="fas fa-bars text-2xl"></i>
@@ -29,7 +36,6 @@
         </div>
     </div>
 </nav>
-    </nav>
 
     <main class="pt-20">
         <!-- Hero Section -->
@@ -212,6 +218,77 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add this section after your existing services -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="font-playfair text-4xl font-bold text-center mb-12">Our Pricing</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Basic Package -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all" 
+                         data-aos="fade-up">
+                        <h3 class="text-2xl font-bold mb-4">Standard</h3>
+                        <p class="text-gray-600 mb-6">Perfect for basic projects</p>
+                        <div class="text-4xl font-bold mb-6">
+                            <span class="text-secondary">$2,500</span>
+                            <span class="text-sm text-gray-500">/m²</span>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-success mr-2"></i>
+                                Basic finishes
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-success mr-2"></i>
+                                Standard fixtures
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-success mr-2"></i>
+                                Basic warranty
+                            </li>
+                        </ul>
+                        <a href="../pages/pricing-calculator.html" 
+                           class="block w-full py-3 px-6 text-center bg-secondary text-white rounded-lg 
+                                  hover:bg-opacity-90 transition-all">
+                            Calculate Cost
+                        </a>
+                    </div>
+
+                    <!-- Add Premium and Luxury packages similarly -->
+                </div>
+
+                <!-- Interactive Elements -->
+                <div class="mt-16 text-center">
+                    <h3 class="text-2xl font-bold mb-8">Want a Custom Quote?</h3>
+                    <div class="flex justify-center space-x-6">
+                        <button onclick="window.location.href='../pages/pricing-calculator.html'"
+                                class="px-8 py-3 bg-secondary text-white rounded-lg hover:bg-opacity-90 
+                                       transition-all transform hover:scale-105">
+                            Use Cost Calculator
+                        </button>
+                        <button onclick="window.location.href='../pages/contact.html'"
+                                class="px-8 py-3 border-2 border-secondary text-secondary rounded-lg 
+                                       hover:bg-secondary hover:text-white transition-all transform 
+                                       hover:scale-105">
+                            Contact Us
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add interactive comparison tool -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="font-playfair text-4xl font-bold text-center mb-12">Compare Services</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <!-- Add comparison table content -->
+                    </table>
                 </div>
             </div>
         </section>

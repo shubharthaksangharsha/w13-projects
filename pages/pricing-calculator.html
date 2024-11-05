@@ -3,134 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Calculator - W13 Projects</title>
+    <meta name="description" content="Calculate construction project costs with W13 Projects' interactive pricing calculator. Get instant estimates for new homes, renovations, and extensions.">
+    <title>Project Cost Calculator - W13 Projects</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../  favicon/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
+
+    <!-- Existing CSS -->
     <link href="../css/tailwind.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+
+    <!-- Add contact form modal styles -->
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
-<body class="font-poppins">
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-        <!-- Your existing navigation -->
+<body>
+    <!-- ... existing content ... -->
+     <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <a href="#home" class="text-2xl font-bold text-primary">W13 Projects</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Home</a>
+                    <a href="../pages/services.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Services</a>
+                    <a href="../pages/portfolio.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Portfolio</a>
+                    <a href="../pages/pricing-calculator.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Cost Calculator</a>
+                    <a href="../pages/contact.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Contact</a>
+                    <a href="../pages/get-in-touch.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all">Get in Touch</a>
+                </div>
+                <button class="md:hidden" id="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
     </nav>
 
-    <main class="pt-20">
-        <section class="bg-gray-50 py-20">
-            <div class="container mx-auto px-4">
-                <h1 class="font-playfair text-5xl font-bold text-center mb-12" data-aos="fade-up">
-                    Project Cost Calculator
-                </h1>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <!-- Calculator Form -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-right">
-                        <form id="calculator-form" class="space-y-6">
-                            <div>
-                                <label class="block text-gray-700 mb-2">Project Type</label>
-                                <select id="project-type" class="w-full p-3 border rounded-lg">
-                                    <option value="new-home">New Home Construction</option>
-                                    <option value="renovation">Renovation</option>
-                                    <option value="extension">Home Extension</option>
-                                </select>
-                            </div>
+    <!-- Add contact button after calculation results -->
+    <div class="mt-6 text-center">
+        <button id="contact-btn" 
+                class="bg-primary text-white px-8 py-3 rounded-lg 
+                       hover:bg-opacity-90 transition-all">
+            Get Detailed Quote
+        </button>
+    </div>
 
-                            <div>
-                                <label class="block text-gray-700 mb-2">Square Meters</label>
-                                <input type="number" id="square-meters" 
-                                       class="w-full p-3 border rounded-lg" 
-                                       placeholder="Enter total square meters">
-                            </div>
-
-                            <div>
-                                <label class="block text-gray-700 mb-2">Quality Level</label>
-                                <div class="grid grid-cols-3 gap-4">
-                                    <button type="button" class="quality-btn" data-quality="standard">
-                                        Standard
-                                    </button>
-                                    <button type="button" class="quality-btn" data-quality="premium">
-                                        Premium
-                                    </button>
-                                    <button type="button" class="quality-btn" data-quality="luxury">
-                                        Luxury
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-gray-700 mb-2">Additional Features</label>
-                                <div class="space-y-3">
-                                    <label class="flex items-center">
-                                        <input type="checkbox" class="form-checkbox text-secondary" 
-                                               name="features" value="pool">
-                                        <span class="ml-2">Swimming Pool</span>
-                                    </label>
-                                    <label class="flex items-center">
-                                        <input type="checkbox" class="form-checkbox text-secondary" 
-                                               name="features" value="smart-home">
-                                        <span class="ml-2">Smart Home Integration</span>
-                                    </label>
-                                    <label class="flex items-center">
-                                        <input type="checkbox" class="form-checkbox text-secondary" 
-                                               name="features" value="solar">
-                                        <span class="ml-2">Solar System</span>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <button type="submit" 
-                                    class="w-full bg-secondary text-white py-4 rounded-lg 
-                                           hover:bg-opacity-90 transition-all">
-                                Calculate Estimate
-                            </button>
-                        </form>
-                    </div>
-
-                    <!-- Result Display -->
-                    <div class="space-y-8" data-aos="fade-left">
-                        <div id="estimate-result" class="bg-white p-8 rounded-xl shadow-lg hidden">
-                            <h3 class="text-2xl font-bold mb-6">Estimated Project Cost</h3>
-                            <div class="space-y-4">
-                                <div class="flex justify-between items-center">
-                                    <span class="text-gray-600">Base Cost:</span>
-                                    <span class="font-bold" id="base-cost">$0</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-gray-600">Features Cost:</span>
-                                    <span class="font-bold" id="features-cost">$0</span>
-                                </div>
-                                <div class="border-t pt-4">
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-xl font-bold">Total Estimate:</span>
-                                        <span class="text-2xl font-bold text-secondary" id="total-cost">$0</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-white p-8 rounded-xl shadow-lg">
-                            <h3 class="text-2xl font-bold mb-6">Important Notes</h3>
-                            <ul class="space-y-4 text-gray-600">
-                                <li class="flex items-start">
-                                    <i class="fas fa-info-circle text-secondary mt-1 mr-3"></i>
-                                    <p>This is a rough estimate and actual costs may vary based on specific requirements and site conditions.</p>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-info-circle text-secondary mt-1 mr-3"></i>
-                                    <p>Contact us for a detailed quote and consultation.</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+    <!-- Contact Form Modal -->
+    <div id="contact-modal" class="modal">
+        <div class="bg-white p-8 rounded-xl shadow-lg max-w-md w-full mx-4">
+            <h3 class="text-2xl font-bold mb-6">Request Detailed Quote</h3>
+            <form id="contact-form" class="space-y-4">
+                <input type="hidden" id="project-details" name="project-details">
+                <div>
+                    <label class="block text-gray-700 mb-2">Name</label>
+                    <input type="text" name="name" required 
+                           class="w-full p-3 border rounded-lg">
                 </div>
-            </div>
-        </section>
-    </main>
+                <div>
+                    <label class="block text-gray-700 mb-2">Email</label>
+                    <input type="email" name="email" required 
+                           class="w-full p-3 border rounded-lg">
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">Phone</label>
+                    <input type="tel" name="phone" required 
+                           class="w-full p-3 border rounded-lg">
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">Additional Notes</label>
+                    <textarea name="notes" rows="3" 
+                              class="w-full p-3 border rounded-lg"></textarea>
+                </div>
+                <div class="flex justify-end space-x-4">
+                    <button type="button" id="close-modal" 
+                            class="px-6 py-2 border rounded-lg">
+                        Cancel
+                    </button>
+                    <button type="submit" 
+                            class="px-6 py-2 bg-secondary text-white rounded-lg 
+                                   hover:bg-opacity-90">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-    <!-- Footer -->
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
-    <script src="../js/calculator.js"></script>
+    <!-- ... existing scripts ... -->
 </body>
 </html> 

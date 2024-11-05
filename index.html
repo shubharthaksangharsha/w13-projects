@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="W13 Projects - Premier construction and home building company specializing in custom homes, renovations, and extensions in Para Hills, SA.">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    
     <title>W13 Projects - Your Dream Home Builder</title>
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -16,12 +24,12 @@
             <div class="flex justify-between items-center h-20">
                 <a href="#home" class="text-2xl font-bold text-primary">W13 Projects</a>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-secondary transition-colors">Home</a>
-                    <a href="pages/about.html" class="text-gray-700 hover:text-secondary transition-colors">About</a>
-                    <a href="pages/portfolio.html" class="text-gray-700 hover:text-secondary transition-colors">Portfolio</a>
-                    <a href="pages/services.html" class="text-gray-700 hover:text-secondary transition-colors">Services</a>
-                    <a href="pages/contact.html" class="text-gray-700 hover:text-secondary transition-colors">Contact</a>
-                    <a href="pages/get-in-touch.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all">Get in Touch</a>
+                    <a href="./index.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Home</a>
+                    <a href="./pages/services.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Services</a>
+                    <a href="./pages/portfolio.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Portfolio</a>
+                    <a href="./pages/pricing-calculator.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Cost Calculator</a>
+                    <a href="./pages/contact.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Contact</a>
+                    <a href="./pages/get-in-touch.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all">Get in Touch</a>
                 </div>
                 <button class="md:hidden" id="mobile-menu-button">
                     <i class="fas fa-bars text-2xl"></i>
@@ -34,12 +42,12 @@
     <div class="fixed top-20 left-0 w-full bg-white shadow-md z-40 hidden" id="mobile-menu">
         <div class="container mx-auto px-4 py-4">
             <div class="flex flex-col space-y-4">
-                <a href="#home" class="text-gray-700 hover:text-secondary transition-colors">Home</a>
-                <a href="#about" class="text-gray-700 hover:text-secondary transition-colors">About</a>
+                <a href="index.html" class="text-gray-700 hover:text-secondary transition-colors">Home</a>
+                <a href="pages/about.html" class="text-gray-700 hover:text-secondary transition-colors">About</a>
                 <a href="pages/portfolio.html" class="text-gray-700 hover:text-secondary transition-colors">Portfolio</a>
-                <a href="#services" class="text-gray-700 hover:text-secondary transition-colors">Services</a>
-                <a href="#contact" class="text-gray-700 hover:text-secondary transition-colors">Contact</a>
-                <a href="#get-in-touch" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all text-center">Get in Touch</a>
+                <a href="pages/services.html" class="text-gray-700 hover:text-secondary transition-colors">Services</a>
+                <a href="pages/contact.html" class="text-gray-700 hover:text-secondary transition-colors">Contact</a>
+                <a href="pages/get-in-touch.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all text-center">Get in Touch</a>
             </div>
         </div>
     </div>
@@ -141,11 +149,11 @@
                         </div>
                         <div class="flex items-center space-x-4">
                             <i class="fas fa-phone text-secondary text-xl"></i>
-                            <p>[Your Phone Number]</p>
+                            <p>+61 401 702 009</p>
                         </div>
                         <div class="flex items-center space-x-4">
                             <i class="fas fa-envelope text-secondary text-xl"></i>
-                            <p>[Your Email]</p>
+                            <p>getprabh.singh@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -192,8 +200,8 @@
                     <h4 class="text-xl font-bold">Contact</h4>
                     <p class="text-gray-400">419 Nelson Road</p>
                     <p class="text-gray-400">Para Hills, SA</p>
-                    <p class="text-gray-400">[Your Phone]</p>
-                    <p class="text-gray-400">[Your Email]</p>
+                    <p class="text-gray-400">+61 401 702 009</p>
+                    <p class="text-gray-400">getprabh.singh@gmail.com</p>
                 </div>
                 <div class="space-y-4">
                     <h4 class="text-xl font-bold">Follow Us</h4>
@@ -225,5 +233,49 @@
         });
     </script>
     <script src="js/main.js"></script>
+    <script>
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+
+                try {
+                    const formData = new FormData(form);
+                    const response = await fetch('/api/contact', {
+                        method: 'POST',
+                        body: JSON.stringify(Object.fromEntries(formData)),
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+
+                    if (!response.ok) throw new Error('Failed to send');
+
+                    // Show success message
+                    const notyf = new Notyf({
+                        duration: 3000,
+                        position: { x: 'right', y: 'top' },
+                    });
+                    notyf.success('Message sent successfully!');
+                    form.reset();
+
+                } catch (error) {
+                    // Show error message
+                    const notyf = new Notyf({
+                        duration: 3000,
+                        position: { x: 'right', y: 'top' },
+                        type: 'error'
+                    });
+                    notyf.error('Failed to send message. Please try again.');
+                } finally {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -8,9 +8,28 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#2c3e50',
-        secondary: '#e67e22',
-        accent: '#3498db',
+        primary: {
+          DEFAULT: '#2c3e50',
+          light: '#34495e',
+          dark: '#243342'
+        },
+        secondary: {
+          DEFAULT: '#e67e22',
+          light: '#f39c12',
+          dark: '#d35400'
+        },
+        accent: {
+          DEFAULT: '#3498db',
+          light: '#5dade2',
+          dark: '#2980b9'
+        },
+        success: '#2ecc71',
+        warning: '#f1c40f',
+        error: '#e74c3c'
+      },
+      screens: {
+        'xs': '475px',
+        '3xl': '1600px',
       },
       fontFamily: {
         playfair: ['Playfair Display', 'serif'],
