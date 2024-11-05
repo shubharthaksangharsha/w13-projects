@@ -6,14 +6,33 @@
     <title>Portfolio - W13 Projects</title>
     <link href="../css/tailwind.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body class="font-poppins">
     <!-- Navigation -->
-    
+    <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <a href="../index.html" class="text-2xl font-bold text-primary">W13 Projects</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html" class="text-gray-700 hover:text-secondary transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-secondary transition-colors">About</a>
+                    <a href="portfolio.html" class="text-gray-700 hover:text-secondary transition-colors">Portfolio</a>
+                    <a href="services.html" class="text-gray-700 hover:text-secondary transition-colors">Services</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-secondary transition-colors">Contact</a>
+                    <a href="get-in-touch.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all">Get in Touch</a>
+                </div>
+                <button class="md:hidden" id="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
     <main class="pt-20">
+        <!-- Portfolio Grid -->
         <section class="bg-gray-50 py-20">
             <div class="container mx-auto px-4">
                 <h1 class="font-playfair text-5xl font-bold text-center mb-4" data-aos="fade-up">
@@ -24,17 +43,209 @@
                 </p>
 
                 <!-- Portfolio Filter -->
-                <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up" data-aos-delay="200">
-                    <button class="filter-btn active px-6 py-2 rounded-full bg-secondary text-white">All</button>
-                    <button class="filter-btn px-6 py-2 rounded-full bg-gray-200">Interior</button>
-                    <button class="filter-btn px-6 py-2 rounded-full bg-gray-200">Exterior</button>
-                    <button class="filter-btn px-6 py-2 rounded-full bg-gray-200">Kitchen</button>
-                    <button class="filter-btn px-6 py-2 rounded-full bg-gray-200">Bathroom</button>
+                <div class="flex justify-center space-x-4 mb-12" data-aos="fade-up" data-aos-delay="200">
+                    <button class="portfolio-filter-btn active" data-filter="all">All</button>
+                    <button class="portfolio-filter-btn" data-filter="residential">Residential</button>
+                    <button class="portfolio-filter-btn" data-filter="commercial">Commercial</button>
+                    <button class="portfolio-filter-btn" data-filter="renovation">Renovation</button>
                 </div>
 
                 <!-- Portfolio Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
-                    <!-- Portfolio items will be dynamically added here -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Living Room -->
+                    <div class="portfolio-item residential" data-aos="fade-up">
+                        <a href="../images/Living.jpg" data-lightbox="portfolio">
+                            <div class="relative group overflow-hidden rounded-lg">
+                                <img src="../images/Living.jpg" alt="Modern Living Room" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <div class="text-white text-center">
+                                        <h3 class="text-xl font-bold mb-2">Modern Living Room</h3>
+                                        <p>Residential Project</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Kitchen -->
+                    <div class="portfolio-item residential" data-aos="fade-up" data-aos-delay="100">
+                        <a href="../images/kitchen.jpg" data-lightbox="portfolio">
+                            <div class="relative group overflow-hidden rounded-lg">
+                                <img src="../images/kitchen.jpg" alt="Luxury Kitchen" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <div class="text-white text-center">
+                                        <h3 class="text-xl font-bold mb-2">Luxury Kitchen</h3>
+                                        <p>Residential Project</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Front -->
+                    <div class="portfolio-item commercial" data-aos="fade-up" data-aos-delay="200">
+                        <a href="../images/front.jpg" data-lightbox="portfolio">
+                            <div class="relative group overflow-hidden rounded-lg">
+                                <img src="../images/front.jpg" alt="Front View" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <div class="text-white text-center">
+                                        <h3 class="text-xl font-bold mb-2">Modern Facade</h3>
+                                        <p>Commercial Project</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Theatre -->
+                    <div class="portfolio-item residential" data-aos="fade-up">
+                        <a href="../images/Theatre.jpg" data-lightbox="portfolio">
+                            <div class="relative group overflow-hidden rounded-lg">
+                                <img src="../images/Theatre.jpg" alt="Home Theatre" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <div class="text-white text-center">
+                                        <h3 class="text-xl font-bold mb-2">Home Theatre</h3>
+                                        <p>Entertainment Space</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Ensuite -->
+                    <div class="portfolio-item renovation" data-aos="fade-up" data-aos-delay="100">
+                        <a href="../images/Ensuite1.jpg" data-lightbox="portfolio">
+                            <div class="relative group overflow-hidden rounded-lg">
+                                <img src="../images/Ensuite1.jpg" alt="Master Ensuite" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <div class="text-white text-center">
+                                        <h3 class="text-xl font-bold mb-2">Master Ensuite</h3>
+                                        <p>Renovation Project</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Alfresco -->
+                    <div class="portfolio-item residential" data-aos="fade-up" data-aos-delay="200">
+                        <a href="../images/Alfresco.jpg" data-lightbox="portfolio">
+                            <div class="relative group overflow-hidden rounded-lg">
+                                <img src="../images/Alfresco.jpg" alt="Alfresco Area" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <div class="text-white text-center">
+                                        <h3 class="text-xl font-bold mb-2">Alfresco Living</h3>
+                                        <p>Outdoor Space</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Bath and 3 way -->
+                    <div class="portfolio-item renovation" data-aos="fade-up">
+                        <a href="../images/Bath and 3 way.jpg" data-lightbox="portfolio">
+                            <div class="relative group overflow-hidden rounded-lg">
+                                <img src="../images/Bath and 3 way.jpg" alt="Bathroom" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <div class="text-white text-center">
+                                        <h3 class="text-xl font-bold mb-2">Modern Bathroom</h3>
+                                        <p>Renovation Project</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Bedroom 2 -->
+                    <div class="portfolio-item residential" data-aos="fade-up" data-aos-delay="100">
+                        <a href="../images/Bedroom 2.jpg" data-lightbox="portfolio">
+                            <div class="relative group overflow-hidden rounded-lg">
+                                <img src="../images/Bedroom 2.jpg" alt="Second Bedroom" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <div class="text-white text-center">
+                                        <h3 class="text-xl font-bold mb-2">Luxury Bedroom</h3>
+                                        <p>Residential Project</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Ensuite bath -->
+                    <div class="portfolio-item renovation" data-aos="fade-up" data-aos-delay="200">
+                        <a href="../images/Ensuite bath.jpg" data-lightbox="portfolio">
+                            <div class="relative group overflow-hidden rounded-lg">
+                                <img src="../images/Ensuite bath.jpg" alt="Ensuite Bathroom" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <div class="text-white text-center">
+                                        <h3 class="text-xl font-bold mb-2">Ensuite Bathroom</h3>
+                                        <p>Renovation Project</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Kitchen 2 -->
+                    <div class="portfolio-item renovation" data-aos="fade-up">
+                        <a href="../images/Kitchen 2.jpg" data-lightbox="portfolio">
+                            <div class="relative group overflow-hidden rounded-lg">
+                                <img src="../images/Kitchen 2.jpg" alt="Second Kitchen" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <div class="text-white text-center">
+                                        <h3 class="text-xl font-bold mb-2">Modern Kitchen</h3>
+                                        <p>Renovation Project</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Laundry -->
+                    <div class="portfolio-item residential" data-aos="fade-up" data-aos-delay="100">
+                        <a href="../images/Laundry.jpg" data-lightbox="portfolio">
+                            <div class="relative group overflow-hidden rounded-lg">
+                                <img src="../images/Laundry.jpg" alt="Laundry Room" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <div class="text-white text-center">
+                                        <h3 class="text-xl font-bold mb-2">Modern Laundry</h3>
+                                        <p>Residential Project</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Living 2 -->
+                    <div class="portfolio-item residential" data-aos="fade-up" data-aos-delay="200">
+                        <a href="../images/Living 2.jpg" data-lightbox="portfolio">
+                            <div class="relative group overflow-hidden rounded-lg">
+                                <img src="../images/Living 2.jpg" alt="Second Living Room" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <div class="text-white text-center">
+                                        <h3 class="text-xl font-bold mb-2">Living Area</h3>
+                                        <p>Residential Project</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- WIP -->
+                    <div class="portfolio-item commercial" data-aos="fade-up">
+                        <a href="../images/WIP.jpg" data-lightbox="portfolio">
+                            <div class="relative group overflow-hidden rounded-lg">
+                                <img src="../images/WIP.jpg" alt="Work in Progress" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <div class="text-white text-center">
+                                        <h3 class="text-xl font-bold mb-2">Construction Progress</h3>
+                                        <p>Commercial Project</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -53,24 +264,26 @@
                             and sustainable design elements. This project showcases our attention to 
                             detail and commitment to excellence.
                         </p>
-                        <ul class="space-y-3">
+                        <ul class="space-y-4">
                             <li class="flex items-center">
-                                <i class="fas fa-check text-secondary mr-3"></i>
-                                5 Bedrooms, 3 Bathrooms
+                                <i class="fas fa-bed text-secondary mr-3 text-xl"></i>
+                                <span>5 Bedrooms, 3 Bathrooms</span>
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-secondary mr-3"></i>
-                                Custom Kitchen Design
+                                <i class="fas fa-utensils text-secondary mr-3 text-xl"></i>
+                                <span>Custom Kitchen Design</span>
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-secondary mr-3"></i>
-                                Smart Home Integration
+                                <i class="fas fa-wifi text-secondary mr-3 text-xl"></i>
+                                <span>Smart Home Integration</span>
                             </li>
                         </ul>
+                        <a href="get-in-touch.html" class="inline-block bg-secondary text-white px-8 py-3 rounded-lg hover:bg-opacity-90 transition-all">
+                            Start Your Project
+                        </a>
                     </div>
                     <div class="relative" data-aos="fade-left">
-                        <img src="../images/front.jpg" alt="Featured Project" 
-                             class="rounded-lg shadow-xl">
+                        <img src="../images/front.jpg" alt="Featured Project" class="rounded-lg shadow-xl">
                         <div class="absolute bottom-4 right-4 bg-white p-4 rounded-lg shadow-lg">
                             <p class="font-bold">Completion Time</p>
                             <p class="text-secondary">8 months</p>
@@ -82,10 +295,40 @@
     </main>
 
     <!-- Footer -->
-    
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <!-- Add your footer content here -->
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
     <script src="../js/portfolio.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="../js/navigation.js"></script>
+
+    <div id="mobile-menu" class="md:hidden fixed inset-0 bg-black bg-opacity-50 z-40 hidden">
+        <div class="bg-white w-64 h-full absolute right-0 py-4 px-6">
+            <div class="flex justify-end mb-8">
+                <button id="close-menu-button">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="flex flex-col space-y-4">
+                <a href="../index.html" class="text-gray-700 hover:text-secondary transition-colors">Home</a>
+                <a href="about.html" class="text-gray-700 hover:text-secondary transition-colors">About</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-secondary transition-colors">Portfolio</a>
+                <a href="services.html" class="text-gray-700 hover:text-secondary transition-colors">Services</a>
+                <a href="contact.html" class="text-gray-700 hover:text-secondary transition-colors">Contact</a>
+                <a href="get-in-touch.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all text-center">Get in Touch</a>
+            </div>
+        </div>
+    </div>
 </body>
-</html> 
+</html>
