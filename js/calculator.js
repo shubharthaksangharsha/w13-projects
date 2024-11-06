@@ -1,204 +1,224 @@
 class ProjectCalculator {
     constructor() {
+        // Initialize base rates for different project types
         this.baseRates = {
             'new-home': 2500,
             'renovation': 1800,
             'extension': 2000
         };
+
+        // Quality level multipliers
         this.qualityMultipliers = {
-            'Standard': 1,
-            'Premium': 1.3,
-            'Luxury': 1.6
+            'standard': 1,
+            'premium': 1.3,
+            'luxury': 1.6
         };
-        this.featuresCost = {
-            'Solar Panels': 15000,
-            'Smart Home': 25000,
-            'Pool': 45000,
-            'Landscaping': 20000
+
+        // Additional feature costs
+        this.featureCosts = {
+            // Energy & Sustainability
+            'solar': 25000,
+            'battery': 15000,
+            'smart-home': 20000,
+            'ev-charger': 3000,
+            'rainwater': 8000,
+            'insulation': 12000,
+
+            // Outdoor Features
+            'pool': 50000,
+            'outdoor-kitchen': 15000,
+            'landscaping': 20000,
+            'deck': 30000,
+            'pergola': 10000,
+
+            // Interior Features
+            'home-theater': 25000,
+            'smart-appliances': 20000,
+            'home-elevator': 45000,
+            'security-system': 8000,
+            'wine-cellar': 35000,
+
+            // Luxury Additions
+            'sauna': 15000,
+            'gym': 20000,
+            'bar': 12000
         };
+
+        this.addStyles();
         this.initializeEventListeners();
     }
 
-    initializeEventListeners() {
-        const form = document.getElementById('calculator-form');
-        const qualityBtns = document.querySelectorAll('.quality-btn');
-
-        form.addEventListener('submit', (e) => this.handleSubmit(e));
-        qualityBtns.forEach(btn => {
-            btn.addEventListener('click', () => this.handleQualitySelection(btn));
-        });
-
-        // Real-time calculation
-        form.addEventListener('change', () => this.calculateCost());
-
-        // Add contact form handling
-        const contactBtn = document.getElementById('contact-btn');
-        const modal = document.getElementById('contact-modal');
-        const closeModal = document.getElementById('close-modal');
-        const contactForm = document.getElementById('contact-form');
-
-        contactBtn.addEventListener('click', () => {
-            this.openContactModal();
-        });
-
-        closeModal.addEventListener('click', () => {
-            modal.classList.remove('active');
-        });
-
-        contactForm.addEventListener('submit', (e) => {
-            this.handleContactSubmit(e);
-        });
-
-        // Close modal on outside click
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
+    addStyles() {
+        const styles = `
+            .feature-btn {
+                transition: all 0.3s ease;
+                background: white;
+                border: 1px solid #e2e8f0;
+                cursor: pointer;
             }
-        });
+
+            .feature-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            }
+
+            .feature-btn.selected {
+                background-color: rgba(230, 126, 34, 0.1);
+                border-color: #e67e22;
+                transform: scale(0.98);
+            }
+
+            .project-type-btn.selected,
+            .quality-btn.selected {
+                background-color: #e67e22;
+                color: white;
+                border-color: #e67e22;
+            }
+        `;
+
+        const styleSheet = document.createElement("style");
+        styleSheet.textContent = styles;
+        document.head.appendChild(styleSheet);
     }
 
-    handleQualitySelection(selectedBtn) {
-        document.querySelectorAll('.quality-btn').forEach(btn => {
-            btn.classList.remove('bg-secondary', 'text-white');
+    initializeEventListeners() {
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Project type buttons
+        document.querySelectorAll('.project-type-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.project-type-btn').forEach(b => 
+                    b.classList.remove('selected'));
+                btn.classList.add('selected');
+                this.calculateCost();
+            });
         });
-        selectedBtn.classList.add('bg-secondary', 'text-white');
-        this.calculateCost();
+
+        // Quality buttons
+        document.querySelectorAll('.quality-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.quality-btn').forEach(b => 
+                    b.classList.remove('selected'));
+                btn.classList.add('selected');
+                this.calculateCost();
+            });
+        });
+
+        // Feature buttons
+        document.querySelectorAll('.feature-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.classList.toggle('selected');
+                this.calculateCost();
+                console.log('Feature clicked:', btn.dataset.feature); // Debug log
+            });
+        });
+
+        // Square meters input and slider
+        const slider = document.getElementById('square-meters-slider');
+        const input = document.getElementById('square-meters');
+        
+        if (slider && input) {
+            slider.addEventListener('input', (e) => {
+                input.value = e.target.value;
+                this.calculateCost();
+            });
+
+            input.addEventListener('input', (e) => {
+                slider.value = e.target.value;
+                this.calculateCost();
+            });
+        }
     }
 
     calculateCost() {
-        const projectType = document.getElementById('project-type').value;
-        const squareMeters = parseFloat(document.getElementById('square-meters').value) || 0;
-        const selectedQuality = document.querySelector('.quality-btn.bg-secondary')?.textContent.trim() || 'Standard';
-        
+        const selectedProjectType = document.querySelector('.project-type-btn.selected')?.dataset.type;
+        const squareMeters = parseFloat(document.getElementById('square-meters')?.value) || 0;
+        const selectedQuality = document.querySelector('.quality-btn.selected')?.dataset.quality;
+
+        if (!selectedProjectType || !squareMeters || !selectedQuality) return;
+
         // Calculate base cost
-        const baseCost = this.baseRates[projectType] * squareMeters;
-        
-        // Calculate features cost
-        const featuresCost = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
-            .reduce((total, checkbox) => total + (this.featuresCost[checkbox.nextElementSibling.textContent.trim()] || 0), 0);
-        
-        // Apply quality multiplier
-        const qualityMultiplier = this.qualityMultipliers[selectedQuality];
-        const totalCost = (baseCost * qualityMultiplier) + featuresCost;
+        const baseCost = this.baseRates[selectedProjectType] * squareMeters;
 
-        this.updateDisplay(baseCost, featuresCost, totalCost - baseCost - featuresCost, totalCost);
-    }
+        // Calculate quality adjustment
+        const qualityAdjustment = baseCost * (this.qualityMultipliers[selectedQuality] - 1);
 
-    updateDisplay(baseCost, featuresCost, qualityCost, totalCost) {
-        document.getElementById('base-cost').textContent = this.formatCurrency(baseCost);
-        document.getElementById('features-cost').textContent = this.formatCurrency(featuresCost);
-        document.getElementById('quality-cost').textContent = this.formatCurrency(qualityCost);
-        document.getElementById('total-cost').textContent = this.formatCurrency(totalCost);
+        // Calculate features cost with debug logging
+        const selectedFeatures = document.querySelectorAll('.feature-btn.selected');
+        console.log('Selected features:', Array.from(selectedFeatures).map(f => f.dataset.feature)); // Debug log
 
-        // Animate the numbers
-        this.animateValue('total-cost', totalCost);
-    }
+        const featuresCost = Array.from(selectedFeatures)
+            .reduce((total, btn) => {
+                const featureCost = this.featureCosts[btn.dataset.feature] || 0;
+                console.log('Feature:', btn.dataset.feature, 'Cost:', featureCost); // Debug log
+                return total + featureCost;
+            }, 0);
 
-    formatCurrency(value) {
-        return `$${Math.round(value).toLocaleString()}`;
-    }
+        // Calculate total
+        const totalCost = baseCost + qualityAdjustment + featuresCost;
 
-    animateValue(elementId, value) {
-        const element = document.getElementById(elementId);
-        const duration = 1000;
-        const start = parseInt(element.textContent.replace(/[^0-9.-]+/g, '')) || 0;
-        const end = value;
-        const range = end - start;
-        const increment = end > start ? 1 : -1;
-        const stepTime = Math.abs(Math.floor(duration / range));
-        
-        let current = start;
-        const timer = setInterval(() => {
-            current += increment;
-            element.textContent = this.formatCurrency(current);
-            if (current === end) {
-                clearInterval(timer);
-            }
-        }, stepTime);
-    }
-
-    handleSubmit(e) {
-        e.preventDefault();
-        this.calculateCost();
-        
-        // Show success notification
-        const notyf = new Notyf({
-            duration: 3000,
-            position: { x: 'right', y: 'top' },
+        // Debug log
+        console.log({
+            baseCost,
+            qualityAdjustment,
+            featuresCost,
+            totalCost
         });
-        notyf.success('Calculation completed successfully!');
+
+        this.updateDisplay(baseCost, qualityAdjustment, featuresCost, totalCost);
     }
 
-    openContactModal() {
-        const modal = document.getElementById('contact-modal');
-        const projectDetails = document.getElementById('project-details');
+    updateDisplay(baseCost, qualityAdjustment, featuresCost, totalCost) {
+        // Update cost breakdown
+        document.getElementById('base-cost').textContent = `$${baseCost.toLocaleString()}`;
+        document.getElementById('quality-cost').textContent = `$${qualityAdjustment.toLocaleString()}`;
+        document.getElementById('features-cost').textContent = `$${featuresCost.toLocaleString()}`;
         
-        // Prepare project details
-        const details = {
-            projectType: document.getElementById('project-type').value,
-            squareMeters: document.getElementById('square-meters').value,
-            quality: document.querySelector('.quality-btn.bg-secondary')?.textContent.trim(),
-            features: Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
-                .map(cb => cb.nextElementSibling.textContent.trim()),
-            estimatedCost: document.getElementById('total-cost').textContent
+        // Animate total cost
+        this.animateValue('total-cost', totalCost);
+
+        // Update progress circle
+        const progressCircle = document.getElementById('progress-circle');
+        if (progressCircle) {
+            const maxCost = 1000000; // Example maximum cost
+            const progressPercentage = (totalCost / maxCost) * 360;
+            progressCircle.style.transform = `rotate(${progressPercentage}deg)`;
+        }
+    }
+
+    animateValue(elementId, endValue) {
+        const element = document.getElementById(elementId);
+        if (!element) return;
+
+        const startValue = parseInt(element.textContent.replace(/[^0-9.-]+/g, '')) || 0;
+        const duration = 500;
+        const startTime = performance.now();
+
+        const updateValue = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            const current = Math.floor(startValue + (endValue - startValue) * progress);
+            element.textContent = `$${current.toLocaleString()}`;
+
+            if (progress < 1) {
+                requestAnimationFrame(updateValue);
+            }
         };
 
-        projectDetails.value = JSON.stringify(details);
-        modal.classList.add('active');
-    }
-
-    async handleContactSubmit(e) {
-        e.preventDefault();
-        const form = e.target;
-        const formData = new FormData(form);
-        
-        try {
-            // Show loading state
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-
-            // Send to your backend API
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                body: JSON.stringify(Object.fromEntries(formData)),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-
-            if (!response.ok) throw new Error('Failed to send message');
-
-            // Show success message
-            const notyf = new Notyf({
-                duration: 3000,
-                position: { x: 'right', y: 'top' },
-            });
-            notyf.success('Message sent successfully! We\'ll contact you soon.');
-
-            // Close modal and reset form
-            document.getElementById('contact-modal').classList.remove('active');
-            form.reset();
-
-        } catch (error) {
-            // Show error message
-            const notyf = new Notyf({
-                duration: 3000,
-                position: { x: 'right', y: 'top' },
-                type: 'error'
-            });
-            notyf.error('Failed to send message. Please try again.');
-
-        } finally {
-            // Reset button state
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        }
+        requestAnimationFrame(updateValue);
     }
 }
 
-// Initialize calculator
+// Initialize calculator when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new ProjectCalculator();
 }); 
