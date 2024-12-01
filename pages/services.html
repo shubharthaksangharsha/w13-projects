@@ -16,350 +16,245 @@
 </head>
 <body class="font-poppins">
 
-
-<!-- Navigation -->
-<nav class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all duration-300">
-    <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center h-20">
-            <a href="#home" class="text-2xl font-bold text-primary">W13 Projects</a>
-            <div class="hidden md:flex space-x-8">
-                <a href="../index.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Home</a>
-                <a href="../pages/about.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">About</a>
-                <a href="../pages/services.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Services</a>
-                <a href="../pages/portfolio.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Portfolio</a>
-                <a href="../pages/pricing-calculator.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Cost Calculator</a>
-                <a href="../pages/contact.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Contact</a>
-                <a href="../pages/get-in-touch.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all">Get in Touch</a>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <a href="#home" class="text-2xl font-bold text-primary">W13 Projects</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Home</a>
+                    <a href="../pages/about.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">About</a>
+                    <a href="../pages/services.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Services</a>
+                    <a href="../pages/portfolio.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Portfolio</a>
+                    <a href="../pages/contact.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Contact</a>
+                    <a href="../pages/get-in-touch.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all">Get in Touch</a>
+                </div>
+                <button class="md:hidden" id="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
             </div>
-            <button class="md:hidden" id="mobile-menu-button">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
         </div>
-    </div>
-</nav>
+    </nav>
 
-    <main class="pt-20">
-        <!-- Hero Section -->
-        <section class="relative h-[60vh] bg-cover bg-center" 
-                 style="background-image: url('../images/Living.jpg');">
-            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-            <div class="relative container mx-auto px-4 h-full flex items-center">
-                <div class="text-white max-w-2xl" data-aos="fade-right">
-                    <h1 class="font-playfair text-5xl font-bold mb-6">Our Services</h1>
-                    <p class="text-xl">Transforming your vision into reality with our comprehensive construction services.</p>
-                </div>
+    <!-- Hero Section -->
+    <section class="relative h-[60vh] bg-cover bg-center" 
+             style="background-image: url('../images/Living.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="relative container mx-auto px-4 h-full flex items-center">
+            <div class="text-white max-w-2xl" data-aos="fade-right">
+                <h1 class="font-playfair text-5xl font-bold mb-6">Our Services</h1>
+                <p class="text-xl">Transforming your vision into reality with our comprehensive construction services.</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Services Grid -->
-        <section class="py-20">
-            <div class="container mx-auto px-4">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Custom Home Building -->
-                    <div class="service-card bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
-                         data-aos="fade-up">
-                        <i class="fas fa-home text-4xl text-secondary mb-6"></i>
-                        <h3 class="text-2xl font-bold mb-4">Custom Home Building</h3>
-                        <p class="text-gray-600 mb-6">Design and construction of bespoke homes tailored to your lifestyle and preferences.</p>
-                        <ul class="space-y-3 text-gray-600">
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-secondary mr-3"></i>
-                                Architectural Design
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-secondary mr-3"></i>
-                                Interior Planning
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-secondary mr-3"></i>
-                                Custom Finishes
-                            </li>
-                        </ul>
+    <!-- Main Content -->
+    <main class="py-20">
+        <div class="container mx-auto px-4">
+            <!-- Main Services Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                <!-- Custom Designs -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up">
+                    <div class="relative h-64">
+                        <img src="../images/Alfresco.jpg" alt="Custom Home Design" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                        <h3 class="absolute bottom-4 left-4 text-2xl font-bold text-white">
+                            Custom Designs
+                        </h3>
                     </div>
-
-                    <!-- Renovation -->
-                    <div class="service-card bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
-                         data-aos="fade-up" data-aos-delay="100">
-                        <i class="fas fa-tools text-4xl text-secondary mb-6"></i>
-                        <h3 class="text-2xl font-bold mb-4">Renovation & Remodeling</h3>
-                        <p class="text-gray-600 mb-6">Transform your existing space with our expert renovation services.</p>
-                        <ul class="space-y-3 text-gray-600">
+                    <div class="p-6 space-y-4">
+                        <p class="text-gray-700">
+                            Transform your vision into reality with our bespoke home design service. We work closely with you to create a unique home that perfectly matches your lifestyle and preferences.
+                        </p>
+                        <ul class="space-y-2">
                             <li class="flex items-center">
-                                <i class="fas fa-check text-secondary mr-3"></i>
-                                Kitchen Remodeling
+                                <i class="fas fa-check text-secondary mr-2"></i>
+                                Personalized architectural designs
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-secondary mr-3"></i>
-                                Bathroom Upgrades
+                                <i class="fas fa-check text-secondary mr-2"></i>
+                                Luxury finishes and features
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-secondary mr-3"></i>
-                                Home Extensions
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Project Management -->
-                    <div class="service-card bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
-                         data-aos="fade-up" data-aos-delay="200">
-                        <i class="fas fa-tasks text-4xl text-secondary mb-6"></i>
-                        <h3 class="text-2xl font-bold mb-4">Project Management</h3>
-                        <p class="text-gray-600 mb-6">Comprehensive project management from concept to completion.</p>
-                        <ul class="space-y-3 text-gray-600">
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-secondary mr-3"></i>
-                                Timeline Management
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-secondary mr-3"></i>
-                                Budget Control
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-secondary mr-3"></i>
-                                Quality Assurance
+                                <i class="fas fa-check text-secondary mr-2"></i>
+                                Full customization options
                             </li>
                         </ul>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Process Section -->
-        <section class="py-20 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <h2 class="font-playfair text-4xl font-bold text-center mb-16" data-aos="fade-up">
-                    Our Process
+                <!-- Property Development -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64">
+                        <img src="../images/Kitchen 2.jpg" alt="Property Development" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                        <h3 class="absolute bottom-4 left-4 text-2xl font-bold text-white">
+                            Property Development
+                        </h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <p class="text-gray-700">
+                            Specialized in residential subdivisions and multi-dwelling developments, we handle everything from planning to completion.
+                        </p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-secondary mr-2"></i>
+                                Land subdivision expertise
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-secondary mr-2"></i>
+                                Council approval management
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-secondary mr-2"></i>
+                                Complete project management
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Subdivision -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-64">
+                        <img src="../images/WIP.jpg" alt="Subdivision Projects" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                        <h3 class="absolute bottom-4 left-4 text-2xl font-bold text-white">
+                            Subdivision Projects
+                        </h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <p class="text-gray-700">
+                            Expert subdivision services from initial planning to final construction, maximizing your property's potential.
+                        </p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-secondary mr-2"></i>
+                                Strategic land division
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-secondary mr-2"></i>
+                                Development approvals
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-secondary mr-2"></i>
+                                Infrastructure coordination
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Process Section -->
+            <div class="mt-20 container mx-auto px-4">
+                <h2 class="text-4xl font-playfair font-bold mb-16 text-center" data-aos="fade-down">
+                    Our Building Process
                 </h2>
-                <div class="max-w-6xl mx-auto relative">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        <!-- Left Side: Steps -->
-                        <div class="relative">
-                            <!-- Step 1 -->
-                            <div class="flex items-start mb-8" data-aos="fade-right">
-                                <div class="flex-shrink-0 w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-2xl font-bold text-white">1</div>
-                                <div class="ml-8 pt-3">
-                                    <h3 class="text-2xl font-bold mb-2">Consultation</h3>
-                                    <p class="text-gray-600">Initial meeting to discuss your vision and requirements</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Footsteps -->
-                            <div class="ml-8 my-4 space-y-2">
-                                <div class="w-8 h-8 bg-[#F5E6D3] rounded-full transform rotate-45"></div>
-                                <div class="w-8 h-8 bg-[#F5E6D3] rounded-full transform rotate-45 ml-4"></div>
-                                <div class="w-8 h-8 bg-[#F5E6D3] rounded-full transform rotate-45 ml-8"></div>
-                            </div>
-
-                            <!-- Step 2 -->
-                            <div class="flex items-start mb-8" data-aos="fade-up" data-aos-delay="100">
-                                <div class="flex-shrink-0 w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-2xl font-bold text-white">2</div>
-                                <div class="ml-8 pt-3">
-                                    <h3 class="text-2xl font-bold mb-2">Planning</h3>
-                                    <p class="text-gray-600">Detailed project planning and design development</p>
-                                </div>
-                            </div>
-
-                            <!-- Footsteps -->
-                            <div class="ml-8 my-4 space-y-2">
-                                <div class="w-8 h-8 bg-[#F5E6D3] rounded-full transform rotate-45"></div>
-                                <div class="w-8 h-8 bg-[#F5E6D3] rounded-full transform rotate-45 ml-4"></div>
-                                <div class="w-8 h-8 bg-[#F5E6D3] rounded-full transform rotate-45 ml-8"></div>
-                            </div>
-
-                            <!-- Step 3 -->
-                            <div class="flex items-start mb-8" data-aos="fade-up" data-aos-delay="200">
-                                <div class="flex-shrink-0 w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-2xl font-bold text-white">3</div>
-                                <div class="ml-8 pt-3">
-                                    <h3 class="text-2xl font-bold mb-2">Execution</h3>
-                                    <p class="text-gray-600">Professional construction and project management</p>
-                                </div>
-                            </div>
-
-                            <!-- Footsteps -->
-                            <div class="ml-8 my-4 space-y-2">
-                                <div class="w-8 h-8 bg-[#F5E6D3] rounded-full transform rotate-45"></div>
-                                <div class="w-8 h-8 bg-[#F5E6D3] rounded-full transform rotate-45 ml-4"></div>
-                                <div class="w-8 h-8 bg-[#F5E6D3] rounded-full transform rotate-45 ml-8"></div>
-                            </div>
-
-                            <!-- Step 4 -->
-                            <div class="flex items-start" data-aos="fade-up" data-aos-delay="300">
-                                <div class="flex-shrink-0 w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-2xl font-bold text-white">4</div>
-                                <div class="ml-8 pt-3">
-                                    <h3 class="text-2xl font-bold mb-2">Delivery</h3>
-                                    <p class="text-gray-600">Final inspection and project handover</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Right Side: Additional Info -->
-                        <div class="space-y-8 lg:mt-12" data-aos="fade-left">
-                            <div class="bg-white p-6 rounded-lg shadow-lg">
-                                <div class="flex items-center mb-4">
-                                    <i class="fas fa-clock text-3xl text-secondary mr-4"></i>
-                                    <h3 class="text-xl font-bold">Average Timeline</h3>
-                                </div>
-                                <p class="text-gray-600">Most projects are completed within 6-8 months from initial consultation to final handover.</p>
-                            </div>
-
-                            <div class="bg-white p-6 rounded-lg shadow-lg">
-                                <div class="flex items-center mb-4">
-                                    <i class="fas fa-chart-line text-3xl text-secondary mr-4"></i>
-                                    <h3 class="text-xl font-bold">Success Rate</h3>
-                                </div>
-                                <p class="text-gray-600">98% of our projects are completed on time and within budget.</p>
-                            </div>
-
-                            <div class="bg-white p-6 rounded-lg shadow-lg">
-                                <div class="flex items-center mb-4">
-                                    <i class="fas fa-users text-3xl text-secondary mr-4"></i>
-                                    <h3 class="text-xl font-bold">Client Satisfaction</h3>
-                                </div>
-                                <p class="text-gray-600">Our dedicated team ensures complete satisfaction throughout the entire process.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Add this section after your existing services -->
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="font-playfair text-4xl font-bold text-center mb-12">Our Pricing</h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Standard Package -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all flex flex-col justify-between" 
-                         data-aos="fade-up">
-                        <div> <!-- Content wrapper -->
-                            <h3 class="text-2xl font-bold mb-4">Standard</h3>
-                            <p class="text-gray-600 mb-6">Perfect for basic projects</p>
-                            <div class="text-4xl font-bold mb-6">
-                                <span class="text-secondary">$2,500</span>
-                                <span class="text-sm text-gray-500">/m²</span>
-                            </div>
-                            <ul class="space-y-4 mb-8">
-                                <li class="flex items-center">
-                                    <i class="fas fa-check text-success mr-2"></i>
-                                    Basic finishes
-                                </li>
-                                <li class="flex items-center">
-                                    <i class="fas fa-check text-success mr-2"></i>
-                                    Standard fixtures
-                                </li>
-                                <li class="flex items-center">
-                                    <i class="fas fa-check text-success mr-2"></i>
-                                    Basic warranty
-                                </li>
-                            </ul>
-                        </div>
-                        <a href="../pages/pricing-calculator.html" 
-                           class="block w-full py-3 px-6 text-center bg-secondary text-white rounded-lg 
-                                  hover:bg-opacity-90 transition-all mt-auto">
-                            Calculate Cost
-                        </a>
-                    </div>
+                <div class="relative max-w-3xl mx-auto">
+                    <!-- Vertical Line -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-secondary to-secondary/70"></div>
 
-                    <!-- Premium Package -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all transform scale-105 flex flex-col justify-between relative" 
-                         data-aos="fade-up" data-aos-delay="100">
-                        <div class="absolute -top-4 right-4 bg-secondary text-white px-4 py-1 rounded-full text-sm">
-                            Popular
-                        </div>
-                        <div> <!-- Content wrapper -->
-                            <h3 class="text-2xl font-bold mb-4">Premium</h3>
-                            <p class="text-gray-600 mb-6">For enhanced quality and features</p>
-                            <div class="text-4xl font-bold mb-6">
-                                <span class="text-secondary">$3,500</span>
-                                <span class="text-sm text-gray-500">/m²</span>
+                    <!-- Process Steps -->
+                    <div class="space-y-32"> <!-- Increased spacing between items -->
+                        <!-- Step 1 -->
+                        <div class="relative group" data-aos="fade-right" data-aos-duration="1000">
+                            <div class="flex items-center">
+                                <div class="w-1/2 pr-12 text-right space-y-3">
+                                    <h3 class="font-bold text-2xl mb-3 text-gray-800 group-hover:text-secondary transition-colors">
+                                        1. Design
+                                    </h3>
+                                    <p class="text-gray-600 text-lg leading-relaxed">
+                                        Collaborative design process tailored to your vision
+                                    </p>
+                                </div>
+                                <div class="absolute left-1/2 transform -translate-x-1/2">
+                                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center shadow-lg 
+                                              group-hover:scale-110 transition-transform duration-300">
+                                        <i class="fas fa-pencil-ruler text-white text-2xl"></i>
+                                    </div>
+                                </div>
                             </div>
-                            <ul class="space-y-4 mb-8">
-                                <li class="flex items-center">
-                                    <i class="fas fa-check text-success mr-2"></i>
-                                    Premium finishes
-                                </li>
-                                <li class="flex items-center">
-                                    <i class="fas fa-check text-success mr-2"></i>
-                                    High-end fixtures
-                                </li>
-                                <li class="flex items-center">
-                                    <i class="fas fa-check text-success mr-2"></i>
-                                    Extended warranty
-                                </li>
-                                <li class="flex items-center">
-                                    <i class="fas fa-check text-success mr-2"></i>
-                                    Smart home features
-                                </li>
-                            </ul>
                         </div>
-                        <a href="../pages/pricing-calculator.html" 
-                           class="block w-full py-3 px-6 text-center bg-secondary text-white rounded-lg 
-                                  hover:bg-opacity-90 transition-all mt-auto">
-                            Calculate Cost
-                        </a>
-                    </div>
 
-                    <!-- Luxury Package -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all flex flex-col justify-between" 
-                         data-aos="fade-up" data-aos-delay="200">
-                        <div> <!-- Content wrapper -->
-                            <h3 class="text-2xl font-bold mb-4">Luxury</h3>
-                            <p class="text-gray-600 mb-6">Ultimate luxury and customization</p>
-                            <div class="text-4xl font-bold mb-6">
-                                <span class="text-secondary">$5,000+</span>
-                                <span class="text-sm text-gray-500">/m²</span>
+                        <!-- Step 2 -->
+                        <div class="relative group" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                            <div class="flex items-center">
+                                <div class="w-1/2"></div>
+                                <div class="absolute left-1/2 transform -translate-x-1/2">
+                                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center shadow-lg 
+                                              group-hover:scale-110 transition-transform duration-300">
+                                        <i class="fas fa-clipboard-list text-white text-2xl"></i>
+                                    </div>
+                                </div>
+                                <div class="w-1/2 pl-12 space-y-3">
+                                    <h3 class="font-bold text-2xl mb-3 text-gray-800 group-hover:text-secondary transition-colors">
+                                        2. Planning
+                                    </h3>
+                                    <p class="text-gray-600 text-lg leading-relaxed">
+                                        Detailed planning and approvals management
+                                    </p>
+                                </div>
                             </div>
-                            <ul class="space-y-4 mb-8">
-                                <li class="flex items-center">
-                                    <i class="fas fa-check text-success mr-2"></i>
-                                    Luxury finishes
-                                </li>
-                                <li class="flex items-center">
-                                    <i class="fas fa-check text-success mr-2"></i>
-                                    Custom fixtures
-                                </li>
-                                <li class="flex items-center">
-                                    <i class="fas fa-check text-success mr-2"></i>
-                                    Lifetime warranty
-                                </li>
-                                <li class="flex items-center">
-                                    <i class="fas fa-check text-success mr-2"></i>
-                                    Full automation
-                                </li>
-                                <li class="flex items-center">
-                                    <i class="fas fa-check text-success mr-2"></i>
-                                    Concierge service
-                                </li>
-                            </ul>
                         </div>
-                        <a href="../pages/pricing-calculator.html" 
-                           class="block w-full py-3 px-6 text-center bg-secondary text-white rounded-lg 
-                                  hover:bg-opacity-90 transition-all mt-auto">
-                            Calculate Cost
-                        </a>
+
+                        <!-- Step 3 -->
+                        <div class="relative group" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
+                            <div class="flex items-center">
+                                <div class="w-1/2 pr-12 text-right space-y-3">
+                                    <h3 class="font-bold text-2xl mb-3 text-gray-800 group-hover:text-secondary transition-colors">
+                                        3. Construction
+                                    </h3>
+                                    <p class="text-gray-600 text-lg leading-relaxed">
+                                        Quality construction with regular updates
+                                    </p>
+                                </div>
+                                <div class="absolute left-1/2 transform -translate-x-1/2">
+                                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center shadow-lg 
+                                              group-hover:scale-110 transition-transform duration-300">
+                                        <i class="fas fa-hard-hat text-white text-2xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="relative group" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600">
+                            <div class="flex items-center">
+                                <div class="w-1/2"></div>
+                                <div class="absolute left-1/2 transform -translate-x-1/2">
+                                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center shadow-lg 
+                                              group-hover:scale-110 transition-transform duration-300">
+                                        <i class="fas fa-key text-white text-2xl"></i>
+                                    </div>
+                                </div>
+                                <div class="w-1/2 pl-12 space-y-3">
+                                    <h3 class="font-bold text-2xl mb-3 text-gray-800 group-hover:text-secondary transition-colors">
+                                        4. Handover
+                                    </h3>
+                                    <p class="text-gray-600 text-lg leading-relaxed">
+                                        Smooth transition into your new home
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Interactive Elements -->
-                <div class="mt-16 text-center">
-                    <h3 class="text-2xl font-bold mb-8">Want a Custom Quote?</h3>
-                    <div class="flex justify-center space-x-6">
-                        <button onclick="window.location.href='../pages/pricing-calculator.html'"
-                                class="px-8 py-3 bg-secondary text-white rounded-lg hover:bg-opacity-90 
-                                       transition-all transform hover:scale-105">
-                            Use Cost Calculator
-                        </button>
-                        <button onclick="window.location.href='../pages/contact.html'"
-                                class="px-8 py-3 border-2 border-secondary text-secondary rounded-lg 
-                                       hover:bg-secondary hover:text-white transition-all transform 
-                                       hover:scale-105">
-                            Contact Us
-                        </button>
-                    </div>
+                <!-- CTA Button -->
+                <div class="text-center mt-20" data-aos="fade-up" data-aos-delay="800">
+                    <a 
+                        href="../pages/contact.html" 
+                        class="inline-block bg-secondary hover:bg-secondary/90 text-white font-bold py-4 px-8 rounded-lg 
+                               shadow-lg transition-all duration-300 transform hover:scale-105"
+                    >
+                        Start Your Project
+                    </a>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
 
     <!-- Mobile Menu -->
@@ -375,23 +270,13 @@
                 <a href="../pages/about.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">About</a>
                 <a href="../pages/services.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Services</a>
                 <a href="../pages/portfolio.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Portfolio</a>
-                <a href="../pages/pricing-calculator.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Cost Calculator</a>
                 <a href="../pages/contact.html" class="text-gray-700 hover:text-secondary transition-colors duration-300">Contact</a>
                 <a href="../pages/get-in-touch.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all">Get in Touch</a>
             </div>
         </div>
     </div>
 
-    <script src="../js/navigation.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-    </script>
-
-        <!-- Footer -->
+    <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-16 pb-8">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
@@ -403,9 +288,9 @@
                     <h4 class="text-xl font-bold">Quick Links</h4>
                     <ul class="space-y-2">
                         <li><a href="../index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="../index.html#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
-                        <li><a href="../index.html#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
-                        <li><a href="../index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="../pages/about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="../pages/services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="../pages/contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 <div class="space-y-4">
@@ -413,7 +298,7 @@
                     <p class="text-gray-400">419 Nelson Road</p>
                     <p class="text-gray-400">Para Hills, SA</p>
                     <p class="text-gray-400">+61 401 702 009</p>
-                    <p class="text-gray-400">getprabh.singh@gmail.com</p>
+                    <p class="text-gray-400">admin@wl3projects.com.au</p>
                 </div>
                 <div class="space-y-4">
                     <h4 class="text-xl font-bold">Follow Us</h4>
@@ -434,7 +319,17 @@
                 <p class="text-gray-400">&copy; 2024 W13 Projects. All rights reserved.</p>
             </div>
         </div>
-    </footer> 
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
 
 </body>
-</html> 
+</html>
